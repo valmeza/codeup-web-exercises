@@ -7,3 +7,58 @@ comment
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+
+body {
+    font-family: Verdana;
+    background-image: url("https://designwoop.com/uploads/2012/05/17580-613x460.jpg");
+    background-color: #ccc;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+em, strong {
+    font-size: 1.1em;
+    color: #00008b;
+}
+
+img {
+    border: 5px solid #ccc;
+    border-radius: 20px;
+}
+
+ ol {
+    list-style: upper-latin;
+}
+
+ ul {
+     list-style: square;
+ }
+
+
+ th, td {
+     text-align: center;
+     font-size: 1.2em;
+     border: 1px solid #ccc;
+     padding: 20px;
+ }
+
+ a:hover {
+     color: #f00;
+ }
+ a:visited {
+     color: #ee82ee;
+ }
+ a:active {
+     color: #d3d3d3;
+ }
+
+footer {
+    color: gray;
+}
