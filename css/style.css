@@ -3,15 +3,14 @@ multi
 line
 comment
 */
-.fancy-header {
-    color: purple; /* single line comment */
+.fancy-header, th{
+    color: #00008b; /* single line comment */
     text-decoration: underline;
 }
 
 body {
-    font-family: Verdana;
-    background-image: url("https://designwoop.com/uploads/2012/05/17580-613x460.jpg");
-    background-color: #ccc;
+    font-family: 'Lato';
+    background: #ccc url("https://designwoop.com/uploads/2012/05/17580-613x460.jpg");
 }
 
 h1 {
@@ -27,7 +26,15 @@ em, strong {
     font-size: 1.1em;
     color: #00008b;
 }
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
 
+}
 img {
     border: 5px solid #ccc;
     border-radius: 20px;
@@ -42,15 +49,15 @@ img {
  }
 
 
- th, td {
+ tr > td {
      text-align: center;
      font-size: 1.2em;
-     border: 1px solid #ccc;
+     border: 1px solid black;
      padding: 20px;
  }
 
  a:hover {
-     color: #f00;
+     background-color: lightgrey;
  }
  a:visited {
      color: #ee82ee;
