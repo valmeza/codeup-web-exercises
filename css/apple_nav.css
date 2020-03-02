@@ -1,0 +1,47 @@
+body {
+    font-size: 17px;
+}
+.top-nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 999;
+    height: 48px;
+    max-height: 44px;
+    display: block;
+    background-color: #333333;
+    position: absolute;
+    width: 100%;
+}
+.nav-item {
+    display: inline-block;
+    list-style: none;
+}
+.nav-content {
+   text-align: center;
+}
+a {
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 20px;
+    font-weight: lighter;
+    font-family: Helvetica;
+    color: white;
+    text-decoration: none;
+}
+.apple-music-content{
+    text-decoration: none;
+}
+.apple-music {
+    left:0;
+    right:0;
+    width: 100%;
+    margin: 30px;
+    padding: 10px;
+    color: black;
+    border-bottom: 1px solid #333333;
+}
+.apple-music-content-2 {
+    text-decoration: none;
+}
