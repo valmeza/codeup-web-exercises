@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+body {
+     margin: 0;
+}
+.wrapper {
+    display: grid;
+    width: 100vh;
+    height: 100vh;
+    grid-gap: .5em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+    "one one one one"
+    "two three four four"
+    "two five five six"
+    "two seven eight nine"
+    "two ten ten ten";
+}
+.one {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: one;
+}
+.two {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: two;
+}
+.three {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: three;
+}
+.four {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: four;
+}
+.five {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: five;
+}
+.six {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: six;
+}
+.seven {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: seven;
+}
+.eight {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: eight;
+}
+.nine {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: nine;
+}
+.ten {
+    color: white;
+    font-size: 3em;
+    background-color: yellow;
+    grid-area: ten;
+}
