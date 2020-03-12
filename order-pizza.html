@@ -71,8 +71,8 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item"><input id="size" type="radio"><label for="size">Small(10")</label></li>
-                <li class="list-group-item"><input id="size2" type="radio"><label for="size2">Medium(14")</label></li>
+                <li class="list-group-item"><input id="tossed10" name="tossed" type="radio"><label for="tossed10">Small(10")</label></li>
+                <li class="list-group-item"><input id="tossed14" name="tossed" type="radio"><label for="tossed14">Medium(14")</label></li>
             </ul>
         </div>
         <div class="card" style="width: auto;">
@@ -81,8 +81,8 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item"><input id="size" type="radio"><label for="size">Small(10")</label></li>
-                <li class="list-group-item"><input id="size2" type="radio"><label for="size2">Medium(14")</label></li>
+                <li class="list-group-item"><input id="crispy10" name="crispy" type="radio"><label for="crispy10">Small(10")</label></li>
+                <li class="list-group-item"><input id="crispy14" name="crispy" type="radio"><label for="crispy14">Medium(14")</label></li>
             </ul>
         </div>
         <div class="card-footer text-right">
@@ -124,8 +124,8 @@
                 <li class="list-group-item">
                     <select class="custom-select" id="sauce-amount">
                         <option selected>Regular</option>
-                        <option value="1">Light</option>
-                        <option value="2">Extra</option>
+                        <option value="light">Light</option>
+                        <option value="extra">Extra</option>
                     </select>
                 </li>
             </ul>
@@ -136,29 +136,64 @@
     </div>
     <div class="card text-left">
         <div id="crustHeader" class="card-header">
-            Choose size and crust
+            Choose Cheese and Sauce
         </div>
         <div class="card" style="width: auto;">
             <div class="card-header">
-                Hand Tossed
+                Cheese
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item"><input id="size" type="radio"><label for="size">Small(10")</label></li>
-                <li class="list-group-item"><input id="size2" type="radio"><label for="size2">Medium(14")</label></li>
+                <li class="list-group-item"><label for="cheese-amount">How much?</label></li>
+                <li class="list-group list-group-flush">
+                <select class="custom-select" id="cheese-amount">
+                    <option value="regular" selected>Regular</option>
+                    <option value="light">Light</option>
+                    <option value="extra">Extra</option>
+                </select>
+                </li>
             </ul>
         </div>
         <div class="card" style="width: auto;">
             <div class="card-header">
-                Crispy Thin
+                Sauce
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item"><input id="size" type="radio"><label for="size">Small(10")</label></li>
-                <li class="list-group-item"><input id="size2" type="radio"><label for="size2">Medium(14")</label></li>
+                <li class="list-group-item"><label for="sauce-type">What Type?</label></li>
+                <li class="list-group-item">
+                    <select class="custom-select" id="sauce-type">
+                        <option value="sauce0"selected>Regular</option>
+                        <option value="sauce1">Sauce1</option>
+                        <option value="sauce2">Sauce2</option>
+                    </select>
+                </li>
             </ul>
         </div>
         <div class="card-footer text-right">
+            <div class="btn btn-group">
+                <a href="#" class="btn btn-primary">< Previous Step</a>
+                <a href="#" class="btn btn-primary">Next Step ></a>
+            </div>
+        </div>
+        <div id="crustHeader" class="card-header">
+            Choose Cheese and Sauce
+        </div>
+        <div class="card" style="width: auto;">
+            <div class="card-header">
+                Cheese
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><label for="cheese">How much?</label></li>
+                <li class="list-group-item">
+                    <select class="custom-select" id="cheese">
+                        <option selected>Regular</option>
+                        <option value="1">Light</option>
+                        <option value="2">Extra</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer text-right">
+            <a href="#" class="btn btn-primary">< Previous Step</a>
             <a href="#" class="btn btn-primary">Next Step ></a>
         </div>
     </div>
