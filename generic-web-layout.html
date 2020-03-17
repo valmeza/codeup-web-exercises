@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generic Web Layout</title>
+    <link rel="stylesheet" href="css/generic-web-layout.css">
+</head>
+<body>
+<script>
+    "use strict";
+    (function () {
+        function makePayment() {
+            var cc = prompt("What's your CC Number?");
+            var expDate = prompt("What's your ExpDate number? MM/YY");
+            var cvc = prompt("What's your cvc number?");
+
+            return cc.length != 0;
+        }
+
+        console.log("makePayment", makePayment());
+    })();
+</script>
+</body>
+</html>
