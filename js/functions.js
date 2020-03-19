@@ -58,7 +58,7 @@ var random = Math.floor((Math.random() * 3) + 1);
         return random === x;
     }
     isTwo(random);
-    console.log(isTwo(random));
+    console.log("Random is " + random ,isTwo(random));
 
 /**
  * TODO:
@@ -106,8 +106,7 @@ calculateTip(0.40, 10);
  */
 
     function applyDiscount(price, discountedPrice) {
-        discountedPrice = .12;
         return price - (price * discountedPrice);
 }
-applyDiscount(10);
-    console.log("Your discount price is $" + applyDiscount(45.99));
+applyDiscount();
+    console.log("Your discount price is $" + applyDiscount(45.99, 0.12));
