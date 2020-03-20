@@ -163,7 +163,7 @@ amazonHours = parseInt(amazonHours);
 var facebookHours = prompt("How many hours did you work at facebook?");
 facebookHours = parseInt(facebookHours);
 
-var totalDollars = (facebook * facebookHours) + (amazon * amazonHours) + (facebook * facebookHours);
+var totalDollars = (facebook * facebookHours) + (amazon * amazonHours) + (google * googleHours);
 
 alert("Total dollars $" + totalDollars);
 
