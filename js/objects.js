@@ -158,7 +158,7 @@
      *      ---
      *      ...
      */
-    books.forEach(function (author, index) {
+    books.forEach(function (book, index) {
         console.log("Book # " + (index + 1) + "\n" + "Title: " + books[index].title + "\n" + "Author: " + books[index].author.firstName + " " + books[index].author.lastName);
     });
 
