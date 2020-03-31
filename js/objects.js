@@ -60,7 +60,7 @@
     //         console.log(shoppers[i].name + " Price: " + shoppers[i].amount + "\n" + "NO Discount" + "\n" + "Amount: " + shoppers[i].amount);
     //     }
     // }
-    shoppers.forEach(function (element,index) {
+    shoppers.forEach(function (element, index) {
         if (element.amount > 200) {
             console.log(element.name + " Price: " + element.amount + "\n" + "Discount total: " + (element.amount * .12) + "\n" + "Amount after Discount " + (element.amount - (element.amount * .12)));
         } else {
@@ -146,6 +146,7 @@
     books.forEach(function (author, index) {
         console.log("Book # " + (index + 1) + "\n" + "Title: " + books[index].title + "\n" + "Author: " + books[index].author.firstName + " " + books[index].author.lastName);
     });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -157,4 +158,16 @@
      *   `showBookInfo` function.
      */
 
+    function createBook(title, author) {
+        title = prompt("Title name?");
+        author = prompt("Author name?");
+        var book = [
+            {
+                title,
+                author,
+            }
+        ];
+        console.log("Book: " + book[0].title + " Author: " + book[0].author);
+    }
+    createBook();
 })();
