@@ -63,13 +63,24 @@
     //     }
     // }
     shoppers.forEach(function (element, index) {
-        if (element.amount > 200) {
-            // get a discount
-            console.log(element.name + " Price: " + element.amount + "\n" + "Discount total: " + (element.amount * .12) + "\n" + "Amount after Discount " + (element.amount - (element.amount * .12)));
-        } else {
-            // don't get discount
-            console.log(element.name + " Price: " + element.amount + "\n" + "No Discount" + "\n" + "Amount: " + element.amount);
+        // if (element.amount > 200) {
+        //     // get a discount
+        //     console.log(element.name + " Price: " + element.amount + "\n" + "Discount total: " + (element.amount * .12) + "\n" + "Amount after Discount " + (element.amount - (element.amount * .12)));
+        // } else {
+        //     // don't get discount
+        //     console.log(element.name + " Price: " + element.amount + "\n" + "No Discount" + "\n" + "Amount: " + element.amount);
+        // }
+
+        // cleaner code
+        var discountedPrice = element.amount;
+        var discount = 0;
+
+        if(element.amount > 200) {
+            // get discount
+            discount = 12;
+            discountedPrice = .12 * element.amount;
         }
+        console.log(element.name + " Price: " + element.amount + " discount: " + discount + "% $" + discountedPrice);
     });
 
     /** TODO:
