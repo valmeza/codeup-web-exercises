@@ -170,4 +170,12 @@
         console.log("Book: " + book[0].title + " Author: " + book[0].author);
     }
     createBook();
+
+    function showBookInfo(info) {
+        info = prompt("Search Book:");
+        if (info === books) {
+            console.log(true);
+        }
+    }
+    showBookInfo();
 })();
