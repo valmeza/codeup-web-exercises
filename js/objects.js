@@ -158,8 +158,12 @@
      *      ---
      *      ...
      */
+    books.push(createBook("Something", "Book Book"));
+    books.push(createBook("Another", "Valeria Meza"));
+    books.push(createBook("Hello", "Hello World"));
     books.forEach(function (book, index) {
         console.log("Book # " + (index + 1) + "\n" + "Title: " + books[index].title + "\n" + "Author: " + books[index].author.firstName + " " + books[index].author.lastName + "\n" + "---");
+        showBookInfo(book);
     });
 
     /**
@@ -172,25 +176,35 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    // function that prompts user to add a book.
+    // function createBook(title, author) {
+    //     title = prompt("Title name?");
+    //     author = prompt("Author name?");
+    //     var book = [
+    //         {
+    //             title,
+    //             author,
+    //         }
+    //     ];
+    //     console.log("Book: " + book[0].title + " Author: " + book[0].author);
+    // }
+    // createBook();
 
-    function createBook(title, author) {
-        title = prompt("Title name?");
-        author = prompt("Author name?");
-        var book = [
-            {
-                title,
-                author,
+    function createBook(aTitle, authorName) {
+        var names = authorName.split(" ");
+        return {
+            title: aTitle,
+            author: {
+                firstName: names[0],
+                lastName: names[1]
             }
-        ];
-        console.log("Book: " + book[0].title + " Author: " + book[0].author);
+        }
     }
-    createBook();
+    console.log(createBook("Harry Potter", "JK Rowling"));
 
-    function showBookInfo(info) {
-        // info = prompt("Search Book:");
-        // if (info === books) {
-        //     console.log(true);
-        // }
+    function showBookInfo(book) {
+        console.log("showbook: ");
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
     }
-    showBookInfo();
 })();
