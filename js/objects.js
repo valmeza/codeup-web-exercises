@@ -28,7 +28,9 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function () {
-        return ("Hello from " + person.firstName + " " + person.lastName + "!");
+        // return ("Hello from " + person.firstName + " " + person.lastName + "!");
+        // or
+        return ("Hello from " + this.firstName + " " + this.lastName + "!");
     };
     console.log(person.sayHello());
 
@@ -172,10 +174,10 @@
     createBook();
 
     function showBookInfo(info) {
-        info = prompt("Search Book:");
-        if (info === books) {
-            console.log(true);
-        }
+        // info = prompt("Search Book:");
+        // if (info === books) {
+        //     console.log(true);
+        // }
     }
     showBookInfo();
 })();
