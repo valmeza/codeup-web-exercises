@@ -64,8 +64,10 @@
     // }
     shoppers.forEach(function (element, index) {
         if (element.amount > 200) {
+            // get a discount
             console.log(element.name + " Price: " + element.amount + "\n" + "Discount total: " + (element.amount * .12) + "\n" + "Amount after Discount " + (element.amount - (element.amount * .12)));
         } else {
+            // don't get discount
             console.log(element.name + " Price: " + element.amount + "\n" + "No Discount" + "\n" + "Amount: " + element.amount);
         }
     });
