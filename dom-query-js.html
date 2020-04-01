@@ -29,25 +29,42 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // var mainHeader = ;
+        var mainHeader = document.getElementById("main-header");
+        console.log(mainHeader);
+        // console.log(mainHeader.innerHTML); prints what it says;
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-
+        mainHeader.innerHTML = "JavaScript is Cool";
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
-
+        var subHeader = document.getElementById("sub-header");
+        console.log(subHeader);
+        // console.log(subHeader.innerHTML);
         // TODO: Set the text color of subHeader to blue
+        var subElement = document.getElementById(("sub-header"));
+        subElement.style.color = 'blue';
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        var listItems = document.getElementsByTagName('li');
+        console.log(listItems);
 
-        // TODO: Set text color on every other list item to grey
+        for (var index = 0; index < listItems.length; index++) {
+            // TODO: Set text color on every other list item to grey
+            if(index % 2 !== 0) {
+                listItems[index].style.color = 'grey';
+            }
+        }
+
         // TODO: Set text color of li with dbid = 1 to blue
-
+        var dbID = listItems[index].getAttribute('data-dbid');
+        console.log('dbid: ' + dbID);
+        if(dbID === "1") {
+            listItems[index].style.color = 'blue';
+        }
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerText = "Mission Accomplished!";
     })();
 </script>
 </body>
