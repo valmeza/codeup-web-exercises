@@ -52,14 +52,14 @@
             if(index % 2 !== 0) {
                 listItems[index].style.color = 'grey';
             }
+            // TODO: Set text color of li with dbid = 1 to blue
+            var dbId = listItems[index].getAttribute('data-dbid');
+            console.log('dbid: ' + dbId);
+            if(dbId === "1") {
+                listItems[index].style.color = 'blue';
+            }
         }
 
-        // TODO: Set text color of li with dbid = 1 to blue
-        var dbID = listItems[index].getAttribute('data-dbid');
-        console.log('dbid: ' + dbID);
-        if(dbID === "1") {
-            listItems[index].style.color = 'blue';
-        }
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
