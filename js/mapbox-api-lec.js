@@ -42,14 +42,13 @@ var map = new mapboxgl.Map({
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-96.8084, 32.7799]. This marker will mark the Sixth Floor Muesume on our map.
 // TODO TOGETHER: Change the color of the marker
 var markerOptions = {
-    color: "green"
+    color: "green",
+    draggable: true
 };
+
 var marker = new mapboxgl.Marker(markerOptions)
     .setLngLat([-97.508469, 35.481918])
     .addTo(map);
-
-
-
 
 // TODO: Experiment with the color, and setting the LngLat
 // TODO: Update the marker object to make the marker draggable. *Hint: reference the docs!
