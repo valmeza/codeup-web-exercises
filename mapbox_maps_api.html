@@ -5,11 +5,70 @@
     <title>Mapbox API</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
 </head>
 <body>
-
-<div id='map' style='width: 600px; height: 400px;'></div>
-
+<style>
+    #map {
+        position: fixed;
+        width: 50%;
+    }
+    #features {
+        width: 50%;
+        margin-left: 50%;
+        font-family: sans-serif;
+        overflow-y: scroll;
+        background-color: #fafafa;
+    }
+    section {
+        padding: 25px 50px;
+        line-height: 25px;
+        border-bottom: 1px solid #ddd;
+        opacity: 0.25;
+        font-size: 13px;
+    }
+    section.active {
+        opacity: 1;
+    }
+    section:last-child {
+        border-bottom: none;
+        margin-bottom: 200px;
+    }
+</style>
+<div id="features">
+    <section id="mexican" class="active">
+        <h1>La Tropicana</h1>
+        <h3>3903 S Western Ave, Oklahoma City, OK 73109.</h3>
+        <p>
+           My Favorite Mexican Restaurant
+        </p>
+    </section>
+    <section id="pizza">
+        <h1>Pie Five</h1>
+        <h3>750 SW 19th St, Ste C, Moore, OK 73160</h3>
+        <p>
+            Favorite Pizza place
+        </p>
+    </section>
+    <section id="chicken">
+        <h1>Chick-fil-a</h1>
+        <h3>6420 SW 3rd St, Oklahoma City, OK 73128</h3>
+        <p>
+            Favorite fast food place
+        </p>
+    </section>
+    <section id="nothing">
+        <h1>OK</h1>
+        <h3>OKC</h3>
+        <p>
+            OKC
+        </p>
+    </section>
+</div>
+<div id="map"></div>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/mapbox_maps_api.js"></script>
