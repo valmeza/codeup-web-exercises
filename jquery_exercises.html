@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>jquery Exercises</title>
-  </head>
-  <body>
-    <h1 id="title" class="title codeup">
-      jquery Exercise
-    </h1>
-    <div id="container" class="container">
-      <p id="para-1" class="para-1 codeup">
+</head>
+<body>
+<h1 id="title" class="title codeup">
+    jquery Exercise
+</h1>
+<div id="container" class="container">
+    <p id="para-1" class="para-1 codeup">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
         corporis cupiditate debitis delectus deserunt
-      </p>
-      <p id="para-2">
+    </p>
+    <p id="para-2">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut
         esse nisi nobis odit. Aspernatur consequatur dignissimos earum itaque
         laborum laudantium mollitia nemo porro possimus reiciendis sit sunt,
         tenetur voluptate!
-      </p>
-      <ul id="list" class="list">
+    </p>
+    <ul id="list" class="list">
         <li class="codeup">list1</li>
         <li>list2</li>
         <li>list3</li>
         <li>list4</li>
-      </ul>
-    </div>
+    </ul>
+</div>
 
-    <script src="js/jquery-2.2.4.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      "use strict";
-      $(document).ready(function() {
+<script src="js/jquery-2.2.4.js"></script>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"
+></script>
+<script>
+    "use strict";
+    $(document).ready(function () {
         console.log("jquery is ready to use!");
         // $('#para-1').html("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis cupiditate debitis delectus deserunt");
         // alert($('#para-1').html());
         // alert($('.list').html());
         // $('.codeup').css("border", "1px solid red");
 
-        $("li").css("font-size", "20px");
-        // $('li').css('background-color', 'yellow');
-        // $('h1').css('background-color', 'yellow');
-        // $('p').css('background-color', 'yellow');
+        //   $("li").css("font-size", "20px");
+        //   // $('li').css('background-color', 'yellow');
+        //   // $('h1').css('background-color', 'yellow');
+        //   // $('p').css('background-color', 'yellow');
+        //
+        //   $("li, h1, p").css("background-color", "yellow"); // combine selectors
+        //
+        //   alert($("h1").html());
+        //   // alert($('h1').text()); will display all text inside the h1
 
-        $("li, h1, p").css("background-color", "yellow"); // combine selectors
+        // Mouse Events jQuery
+        // $('#title').click(function() {
+        //     $('#title').css('background-color', 'blue');
+        //     console.log('Button was clicked!');
+        // });
 
-        alert($("h1").html());
-        // alert($('h1').text()); will display all text inside the h1
-      });
-    </script>
-  </body>
+        // using an anonymous function to achieve the same thing
+        // does the same as the above function ^^^
+        var changeBackground = function () {
+            $('#title').css('background-color', 'blue');
+        };
+
+        $('#title').click(changeBackground);
+    });
+
+    // changing the font size of all paragraphs
+    // $('p').dblclick(function () {
+    //   $('p').css('font-size', '18px');
+    //   console.log('font has changed');
+    // });
+
+    // using an anonymous function to achieve the same thing
+    // does the same as the function above ^^^
+    var doubleClickToChangeFont = function () {
+        $('p').css('font-size', '18px');
+    };
+
+    $('p').dblclick(doubleClickToChangeFont);
+
+    // changing all the li text color when mouse hovers over list
+    // $('li').hover(
+    //     function () {
+    //         $('li').css('color', 'red');
+    //     },
+    //     function () {
+    //         $('li').css('color', 'black');
+    //     }
+    // );
+
+    // using an anonymous function to achieve the same thing
+    // does the same as the function above ^^^
+    var turnRedOnHover = function () {
+      $('li').css('color', 'red');
+    };
+    var turnBlackOffHover = function () {
+      $('li').css('color', 'black');
+    };
+    $('li').hover(turnRedOnHover, turnBlackOffHover);
+</script>
+</body>
 </html>
