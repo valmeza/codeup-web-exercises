@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Konami Code</title>
+</head>
+<body>
+<h1>
+    Konami Code
+</h1>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    var secretCode = '3838404037393739666513';
+    var userInput = "";
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+        userInput += event.keyCode;
+        if(userInput === secretCode) {
+            alert('You have 40 more lives');
+        }
+    });
+
+</script>
+</body>
+</html>
