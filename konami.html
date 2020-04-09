@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Konami Code</title>
+</head>
+<body>
+<h1>
+    Konami Code
+</h1>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    var secretCode = '3838404037393739666513';
+    var userInput = "";
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+        userInput += event.keyCode;
+        if(userInput === secretCode) {
+            // alert('You have 40 more lives');
+            $("body").css('background-image', 'url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.o3RRBurc3-CGX6Ue4fphtwHaEK%26pid%3DApi&f=1")');
+        }
+    });
+
+</script>
+</body>
+</html>
