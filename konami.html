@@ -19,9 +19,32 @@
         if(userInput === secretCode) {
             // alert('You have 40 more lives');
             $("body").css('background-image', 'url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.o3RRBurc3-CGX6Ue4fphtwHaEK%26pid%3DApi&f=1")');
+            setTimeout(function() {
+                $("body").css('background-image', 'none');
+            }, 2000);
         }
     });
 
+
+    // another way to do this;
+
+    // var keys = [];
+    // var konamiKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    // $(document).keyup(function (event) {
+    //     console.log(event.keyCode);
+    //
+    //     // add the new key to the end of the array
+    //     keys.push(event.keyCode);
+    //
+    //     // only keep the last 10 key strokes
+    //     keys = keys.slice(-11);
+    //
+    //     // compare konamiKeys to the keys entered;
+    //     if( keys.join('') === konamiKeys.join('')) {
+    //         alert('you get infinity lives!!');
+    //     }
+    //
+    // });
 </script>
 </body>
 </html>
