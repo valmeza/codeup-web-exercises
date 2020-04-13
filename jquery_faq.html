@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .invisible {
-            visibility: hidden;
-        }
+      .invisible {
+        visibility: hidden;
+      }
 
-        .highlight {
-            background-color: yellow;
-        }
-        dt {
-            cursor: pointer;
-        }
+      .highlight {
+        background-color: yellow;
+      }
+      dt {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -22,96 +22,92 @@
     <dl>
       <dt>Q1:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aliquam
-        reprehenderit mollitia tempore eligendi, doloremque inventore est atque
-        maiores! Illo delectus quae quaerat modi sint fugit nam aliquid in
-        sequi?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </dd>
 
       <dt>Q2:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
-        molestiae incidunt voluptate veniam corrupti id quisquam necessitatibus!
-        Consectetur quaerat fugiat quas voluptatem aspernatur, minima,
-        perspiciatis assumenda magni nisi, pariatur laudantium!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
       </dd>
 
       <dt>Q3:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
-        impedit temporibus vel quas distinctio reprehenderit, tempora quisquam
-        consequuntur ipsum autem assumenda optio non amet aliquid ducimus
-        repellat? Numquam, doloremque! Autem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </dd>
 
       <dt>Q4:</dt>
       <dd class="invisible">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quaerat
-        odit nam reprehenderit perspiciatis quidem maiores eum eius, optio
-        soluta error fugit fuga porro pariatur at. Ipsa eligendi odit iusto?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </dd>
 
       <dt>Q5:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum
-        suscipit fugit deleniti consequuntur excepturi ea iste, error ad nemo
-        quis minima! Porro, beatae. Ex aut minus eum praesentium eligendi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </dd>
 
       <dt>Q6:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus
-        voluptatibus sunt sequi natus quisquam ducimus, ab ea fuga doloribus?
-        Excepturi minus maxime sapiente veniam voluptatibus corporis in, qui
-        recusandae fugiat!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
       </dd>
 
       <dt>Q7:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, tempora
-        doloremque, sed quod doloribus ducimus, blanditiis mollitia cupiditate
-        consectetur praesentium quasi assumenda velit omnis atque nesciunt.
-        Labore nesciunt ipsa accusantium.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </dd>
 
       <dt>Q8:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error deserunt
-        nostrum ab? Ullam ratione reiciendis quod quas officia maiores
-        laudantium accusantium veniam distinctio, saepe eius a quia unde odit
-        totam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </dd>
 
       <dt>Q9:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloribus
-        eum quaerat natus eveniet nulla quo quod repellat. Sunt veritatis
-        eveniet doloremque temporibus rem illum deserunt asperiores? Fugit, eum
-        placeat.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </dd>
 
       <dt>Q10:</dt>
       <dd class="invisible">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit
-        eaque, tenetur quisquam repudiandae delectus expedita velit maxime nam.
-        Sapiente quam esse aliquid repudiandae obcaecati voluptatibus incidunt
-        architecto? Facere, possimus veritatis?
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
       </dd>
     </dl>
+
+    <!-- Traversing events exercise -->
+    <!-- adding an unordered list -->
+    <h3>State Parks of California</h3>
+    <ul>
+        <li>park</li>
+        <li>park</li>
+        <li>park</li>
+        <li>park</li>
+    </ul>park
+    <h3>Statparke Parks of Texas</h3>
+    <ul>
+        <li>park</li>
+        <li>park</li>
+        <li>park</li>
+        <li>park</li>
+    </ul>park
+    <h3>Statparke Parks of Oklahoma</h3>
+    <ul>
+        <li>park</li>
+        <li>park</li>
+        <li>park</li>
+        <li>park</li>
+    </ul>
     <!-- <button id="btn">show</button> -->
     <a href="#" id="show-hide">Show/Hide</a>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-        "use strict";
+      "use strict";
       $(document).ready(function (e) {
-          console.log("DOM is ready.")
-        $("#show-hide").click(function() {
-            $("dd").toggleClass("invisible")
+        console.log("DOM is ready.");
+        $("#show-hide").click(function () {
+          $("dd").toggleClass("invisible");
         });
 
-        $("dt").click(function() {
-            $(this).toggleClass("highlight");
-        })
+        $("dt").click(function () {
+          $(this).toggleClass("highlight");
+        });
       });
     </script>
   </body>
