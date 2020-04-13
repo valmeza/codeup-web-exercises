@@ -119,9 +119,18 @@
           });
         });
 
+        // li's go bold when an h3 is clicked
         $('h3').click(function() {
             $('ul').children().css('font-weight', 'bold');
         });
+
+        // when a list item is clicked, first li of parent ul should have a font color blue
+
+        $('ul').click(function() {
+            $('ul').each(function(index) {
+                $(this).children().first().css('color', 'blue');
+            });
+        })
       });
     </script>
   </body>
