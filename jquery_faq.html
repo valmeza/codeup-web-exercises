@@ -94,10 +94,12 @@
     <button id="btn">show</button>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-      $(document).ready(function () {
+      $(document).ready(function (e) {
           console.log("DOM is ready.")
         $("#btn").click(function() {
-
+            $("#btn").click(function() {
+                $("dd").toggleClass("invisible")
+            });
         });
       });
     </script>
