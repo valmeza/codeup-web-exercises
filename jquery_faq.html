@@ -91,13 +91,14 @@
         architecto? Facere, possimus veritatis?
       </dd>
     </dl>
-    <button id="btn">show</button>
+    <!-- <button id="btn">show</button> -->
+    <a href="#" id="show-hide">Show/Hide</a>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
       $(document).ready(function (e) {
           console.log("DOM is ready.")
-        $("#btn").click(function() {
-            $("#btn").click(function() {
+        $("#show-hide").click(function() {
+            $("#show-hide").click(function() {
                 $("dd").toggleClass("invisible")
             });
         });
