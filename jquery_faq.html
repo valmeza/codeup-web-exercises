@@ -8,6 +8,10 @@
         .invisible {
             visibility: hidden;
         }
+
+        .highlight {
+            background-color: yellow;
+        }
     </style>
   </head>
   <body>
@@ -98,9 +102,7 @@
       $(document).ready(function (e) {
           console.log("DOM is ready.")
         $("#show-hide").click(function() {
-            $("#show-hide").click(function() {
-                $("dd").toggleClass("invisible")
-            });
+            $("dd").toggleClass("invisible")
         });
       });
     </script>
