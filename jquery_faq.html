@@ -144,7 +144,7 @@
       $('ul').children().hide();
       // when clicked reveals the ul
       $('h3').click(function() {
-        $(this).next().children().show();
+        $(this).next().children().slideToggle().show();
       });
       // h2 fades in when user has spent 8 sec on page
       $('h2').hide();
