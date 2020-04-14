@@ -18,6 +18,7 @@
     </style>
   </head>
   <body>
+    <h2>Register to our Site!</h2>
     <div>
       <span>X</span>
       <h1>Would you like to sign up for our newsletter?</h1>
@@ -145,6 +146,9 @@
       $('h3').click(function() {
         $(this).next().children().show();
       });
+      // h2 fades in when user has spent 8 sec on page
+      $('h2').hide();
+      $('h2').fadeIn(8000);
     </script>
   </body>
 </html>
