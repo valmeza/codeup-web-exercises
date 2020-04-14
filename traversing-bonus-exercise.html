@@ -27,7 +27,8 @@
       #frame-3 {
         width: 350px;
         height: 350px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.90);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.9);
         margin: auto;
       }
       #btn-1,
@@ -114,14 +115,15 @@
     <script>
       $(document).ready(function () {
         console.log("DOM is Ready");
-        $('#swap-btn-1').click(function() {
-            $()
+        $("#swap-btn-1").click(function () {
+          console.log("button 1 works");
+          var container = $('#container div');
         });
-        $('#swap-btn-2').click(function() {
-
+        $("#swap-btn-2").click(function () {
+          console.log("button 2 works");
         });
-        $('#swap-btn-3').click(function() {
-
+        $("#swap-btn-3").click(function () {
+          console.log("button 3 works");
         });
       });
     </script>
