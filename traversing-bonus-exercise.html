@@ -1,37 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jQuery Traversing</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        #main-header {
-            text-align: center;
-            color: #ffffff;
-            border-bottom: 4px solid black;
-            padding: 25px;
-            background-color: #333;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #main-header {
+        text-align: center;
+        color: #ffffff;
+        border-bottom: 4px solid black;
+        margin-bottom: 50px;
+        padding: 25px;
+        background-color: #333;
+      }
+      #container,
+      #btn-container {
+        display: flex;
+        justify-content: center;
+      }
+      #frame-1,
+      #frame-2,
+      #frame-3 {
+        width: 350px;
+        height: 350px;
+        border: 8px solid #ccc;
+        margin: auto;
+      }
+      #btn-1,
+      #btn-2,
+      #btn-3 {
+        margin: 20px auto;
+      }
+      #swap-btn-1,
+      #swap-btn-2,
+      #swap-btn-3 {
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #ccc;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+      #swap-btn-1:hover,
+      #swap-btn-2:hover,
+      #swap-btn-3:hover {
+        background-color: #666;
+      }
+
+      #swap-btn-1:active,
+      #swap-btn-2:active,
+      #swap-btn-3:active {
+        background-color: #333;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      .mona-lisa,
+      .starry-night,
+      .frida-kahlo {
+        width: 334px;
+        height: 334px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1 id="main-header">jQuery Traversing</h1>
     <!-- picture frames -->
-    <div id="frame-1"></div>
-    <div id="frame-2"></div>
-    <div id="frame-3"></div>
+    <div id="container">
+      <div id="frame-1">
+        <img
+          class="mona-lisa"
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Fhnn-bucket%2Fsites%2Fdefault%2Ffiles%2F171455-monalisa.png&f=1&nofb=1"
+          alt="mona lisa"
+        />
+      </div>
+      <div id="frame-2">
+        <img
+          class="starry-night"
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrIdG2wnHE34%2Fmaxresdefault.jpg&f=1&nofb=1"
+          alt="starry night"
+        />
+      </div>
+      <div id="frame-3">
+        <img
+          class="frida-kahlo"
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.firstpost.com%2Fwp-content%2Fuploads%2F2017%2F07%2F18700233_659922264200241_5489745228136063783_n.jpg&f=1&nofb=1"
+          alt="frida kahlo"
+        />
+      </div>
+    </div>
+    <div id="btn-container">
+      <div id="btn-1">
+        <button id="swap-btn-1">Swap</button>
+      </div>
+      <div id="btn-2">
+        <button id="swap-btn-2">Swap</button>
+      </div>
+      <div id="btn-3">
+        <button id="swap-btn-3">Swap</button>
+      </div>
+    </div>
 
     <!-- ALL SCRIPTS GO HERE -->
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-        $(document).ready(function() {
-            console.log('DOM is Ready');
-        });
+      $(document).ready(function () {
+        console.log("DOM is Ready");
+      });
     </script>
-</body>
+  </body>
 </html>
