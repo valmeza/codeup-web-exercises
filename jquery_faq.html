@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <style>
       .invisible {
         visibility: hidden;
@@ -18,10 +24,11 @@
     </style>
   </head>
   <body>
+
     <h2>Register to our Site!</h2>
+
     <div>
-      <span>X</span>
-      <h1>Would you like to sign up for our newsletter?</h1>
+      <h1 class="alert alert-info" role="alert">Would you like to sign up for our newsletter? <span>X</span></h1>
     </div>
     <p>National Parks FAQ:</p>
     <dl>
@@ -104,6 +111,23 @@
 
     <!-- <button id="btn">show</button> -->
     <a href="#" id="show-hide">Show/Hide</a>
+
+    <!-- all bootstrap required scripts go here -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
       "use strict";
@@ -137,18 +161,18 @@
       });
 
       // effects exercise
-      $('span').click(function() {
-        $('div').hide();
+      $("span").click(function () {
+        $("div").hide();
       });
       // hides the ul
-      $('ul').children().hide();
+      $("ul").children().hide();
       // when clicked reveals the ul
-      $('h3').click(function() {
+      $("h3").click(function () {
         $(this).next().children().slideToggle().show();
       });
       // h2 fades in when user has spent 8 sec on page
       $('h2').hide();
-      $('h2').fadeIn(8000);
+      $('h2').fadeIn(8000).show();
     </script>
   </body>
 </html>
