@@ -18,6 +18,11 @@
     </style>
   </head>
   <body>
+    <h2>Register to our Site!</h2>
+    <div>
+      <span>X</span>
+      <h1>Would you like to sign up for our newsletter?</h1>
+    </div>
     <p>National Parks FAQ:</p>
     <dl>
       <dt>Q1:</dt>
@@ -115,21 +120,35 @@
         // button for parks
         $("#parks").click(function () {
           $("ul").each(function (index) {
-            $(this).children().last().toggleClass('highlight');
+            $(this).children().last().toggleClass("highlight");
           });
         });
 
         // li's go bold when an h3 is clicked
-        $('h3').click(function() {
-            $(this).next().children().css('font-weight', 'bold');
+        $("h3").click(function () {
+          $(this).next().children().css("font-weight", "bold");
         });
 
         // when a list item is clicked, first li of parent ul should have a font color blue
-        $('li').click(function() {
+        $("li").click(function () {
           //  li ---> ul ---->li ---> first li
-           $(this).parent().children().first().css('background-color','blue');
-        })
+          $(this).parent().children().first().css("background-color", "blue");
+        });
       });
+
+      // effects exercise
+      $('span').click(function() {
+        $('div').hide();
+      });
+      // hides the ul
+      $('ul').children().hide();
+      // when clicked reveals the ul
+      $('h3').click(function() {
+        $(this).next().children().slideToggle().show();
+      });
+      // h2 fades in when user has spent 8 sec on page
+      $('h2').hide();
+      $('h2').fadeIn(8000);
     </script>
   </body>
 </html>
