@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Harry Potter API</h1>
-    <div id="container">
-        <h2 id="characters"></h2>
-        <p id="house"></p>
-    </div>
-
+  </head>
+  <body>
+    <h1 id="sorting-hat"></h1>
     <!-- scripts -->
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-        "use strict";
-        (function () {
-            $(document).ready(function() {
-                console.log('Hello from the DOM jQuery');
-                
-            });
-        }());
+      "use strict";
+      (function () {
+        $(document).ready(function () {
+          console.log("Hello from the DOM jQuery");
+          var harryPotterSortingHat = "https://www.potterapi.com/v1/sortingHat";
+
+          $.ajax(harryPotterSortingHat).done(function (data, status) {
+            alert("Ajax completed Successfully!");
+            console.log("Request Status: " + status);
+            console.log("Data returned from server");
+            console.log(data);
+            $("#sorting-hat").text(data + "!");
+          });
+        });
+      })();
     </script>
-</body>
+  </body>
 </html>
