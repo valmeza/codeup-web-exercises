@@ -139,6 +139,12 @@
       $('span').click(function() {
         $('div').hide();
       });
+      // hides the ul
+      $('ul').children().hide();
+      // when clicked reveals the ul
+      $('h3').click(function() {
+        $(this).next().children().show();
+      });
     </script>
   </body>
 </html>
