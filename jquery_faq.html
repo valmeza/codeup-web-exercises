@@ -115,7 +115,7 @@
         // button for parks
         $("#parks").click(function () {
           $("ul").each(function (index) {
-            $(this).children().last().css("background-color", "yellow");
+            $(this).children().last().toggleClass('highlight');
           });
         });
 
