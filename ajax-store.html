@@ -59,9 +59,8 @@
             .done(function (data, status) {
               console.log(data);
               $.each(data, function (i, value) {
-                console.log(value);
                 var inventory = "<tr>";
-                inventory += "<td>" + value.title + "</td>";
+                inventory += "<td>" + value.title +"</td>";
                 inventory += "<td>" + value.quantity + "</td>";
                 inventory += "<td>" + value.price + "</td>";
                 inventory += "<td>" + value.categories + "</td>";
