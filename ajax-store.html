@@ -12,7 +12,9 @@
   </head>
   <body class="fluid">
     <h1 class="text-center text-white bg-dark p-4 mb-3">My Tool Store</h1>
-    <button id="refresh" type="button" class="btn btn-dark m-2 mb-3">Refresh</button>
+    <button id="refresh" type="button" class="btn btn-dark m-2 mb-3">
+      Refresh
+    </button>
     <table id="products" class="table table-striped text-center">
       <thead class="thead-dark">
         <tr>
@@ -52,24 +54,26 @@
           //       HINT: Your data should come back as a JSON object; use console.log() to inspect
           //             its contents and fields
           //       HINT: You will want to target #insertProducts for your new HTML elements
+
           var inventoryTable = $("#insertProducts");
-          $.ajax("/data/inventory.json", {
-            type: "GET",
-          })
-            .done(function (data, status) {
-              console.log(data);
-              $.each(data, function (i, value) {
-                var inventory = "<tr>";
-                inventory += "<td>" + value.title +"</td>";
+          function renderInventory(value) {
+            var inventory = "";
+            value.forEach(function(value) {
+                inventory = "<tr>";
+                inventory += "<td>" + value.title + "</td>";
                 inventory += "<td>" + value.quantity + "</td>";
                 inventory += "<td>" + value.price + "</td>";
                 inventory += "<td>" + value.categories + "</td>";
                 inventory += "</tr>";
                 $("tbody#insertProducts").append(inventory);
-                $("#refresh").click(function () {
-                  location.reload();
-                });
-              });
+            });
+          }
+          $.ajax("/data/inventory.json", {
+            type: "GET",
+          })
+            .done(function (data, status) {
+              console.log(data);
+              renderInventory(data);
             })
             .fail(function (error) {
               console.log("Something went wrong");
@@ -79,7 +83,6 @@
               console.log("This will alway run!");
             });
         });
-
         // refresh button
       })();
     </script>
