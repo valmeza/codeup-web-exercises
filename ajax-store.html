@@ -55,10 +55,10 @@
           //             its contents and fields
           //       HINT: You will want to target #insertProducts for your new HTML elements
 
-          var inventoryTable = $("#insertProducts");
-          function renderInventory(value) {
+          // Inventory
+          function renderInventory(toolArray) {
             var inventory = "";
-            value.forEach(function(value) {
+            toolArray.forEach(function(value) {
                 inventory = "<tr>";
                 inventory += "<td>" + value.title + "</td>";
                 inventory += "<td>" + value.quantity + "</td>";
@@ -68,7 +68,10 @@
                 $("tbody#insertProducts").append(inventory);
             });
           }
-          $.ajax("/data/inventory.json", {
+
+          // ajax function here
+          function getInventoryInformation() {
+            $.ajax("/data/inventory.json", {
             type: "GET",
           })
             .done(function (data, status) {
@@ -82,8 +85,12 @@
             .always(function () {
               console.log("This will alway run!");
             });
+          }
+          getInventoryInformation();
+
+            // refresh button
+            
         });
-        // refresh button
       })();
     </script>
   </body>
