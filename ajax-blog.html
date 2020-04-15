@@ -18,7 +18,6 @@
     />
   </head>
   <body>
-
     <!-- start of the main content -->
     <h1 class="text-center text-white bg-dark p-4 mb-3">Blog</h1>
     <div id="posts" class="m-5"></div>
@@ -48,31 +47,42 @@
       (function () {
         $(document).ready(function () {
           console.log("DOM jQuery is Ready");
-          $.ajax("/data/blog.json", {
-            type: 'GET',
-          }).done(function (data, status) {
-            console.log('ready');
-            $.each(data, function(i, value) {
-                console.log(value);
-                var blogInnerHtml = $('#posts');
-                var blogContent = '<ul class="list-unstyled">'
-                  blogContent += '<li class="media">'
-                    blogContent += '<div class="media-body">'
-                    blogContent += '<h2 class="mt-0 mb-1">'+value.title+'</h2>'
-                    blogContent += '<h6 class="font-italic">'+value.date+'</h6>'
-                    blogContent += '<p>'+value.content+'</p>'
-                    blogContent += '<p class="font-weight-lighter">'+" Favorite Categories: "+value.categories+'</p>'
-                    blogContent += '</div>'
-                    blogContent += '</li>'
-                    blogContent += '</ul>'
-
-                    $(blogInnerHtml).append(blogContent);
+          //blog content
+          function updateBlog(blog) {
+            blog.forEach(function (value) {
+              var blogInnerHtml = $("#posts");
+              var blogContent = '<ul class="list-unstyled">';
+              blogContent += '<li class="media">';
+              blogContent += '<div class="media-body">';
+              blogContent += '<h2 class="mt-0 mb-1">' + value.title + "</h2>";
+              blogContent += '<h6 class="font-italic">' + value.date + "</h6>";
+              blogContent += "<p>" + value.content + "</p>";
+              blogContent +=
+                '<p class="font-weight-lighter">' +
+                " Favorite Categories: " +
+                value.categories +
+                "</p>";
+              blogContent += "</div>";
+              blogContent += "</li>";
+              blogContent += "</ul>";
+              $(blogInnerHtml).append(blogContent);
             });
-          }).fail(function(error) {
-            console.error(error);
-          }).always(function() {
-            console.log('this always runs');
-          });
+          }
+          
+          // ajax below
+          $.ajax("/data/blog.json", {
+            type: "GET",
+          })
+            .done(function (data, status) {
+              console.log("ready");
+              updateBlog(data);
+            })
+            .fail(function (error) {
+              console.error(error);
+            })
+            .always(function () {
+              console.log("this always runs");
+            });
         });
       })();
     </script>
