@@ -6,7 +6,7 @@
 <body>
 
 <h1>My Tool Store</h1>
-
+<button id="refresh">Refresh</button>
 <table id="products">
     <thead>
         <tr>
@@ -35,6 +35,7 @@
     $.ajax('/data/inventory.json', {
         type : 'GET',
     }).done(function(data, status) {
+        console.log(data);
         $.each(data, function(i, value) {
             console.log(value);
             var inventory = '<tr>';
@@ -46,11 +47,14 @@
                 $('tbody#insertProducts').append(inventory);
         });
     }).fail(function(error) {
+        console.log("Something went wrong");
         console.log(error);
     }).always(function() {
         console.log('This will alway run!');
     });
     });
+
+    // refresh button
 })();
 </script>
 
