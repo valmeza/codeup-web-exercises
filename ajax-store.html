@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Online Store</title>
-</head>
-<body>
-
-<h1>My Tool Store</h1>
-<button id="refresh">Refresh</button>
-<table id="products">
-    <thead>
+  </head>
+  <body>
+    <h1>My Tool Store</h1>
+    <button id="refresh">Refresh</button>
+    <table id="products">
+      <thead>
         <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Categories</th>
         </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
+      </thead>
+      <tbody id="insertProducts"></tbody>
+    </table>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script>
-(function() {
-    "use strict";
+    <script>
+      (function () {
+        "use strict";
 
-    $(document).ready(function() {
-    // TODO: Create an ajax GET request for /data/inventory.json
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-    var inventoryTable = $('#insertProducts');
-    $.ajax('/data/inventory.json', {
-        type : 'GET',
-    }).done(function(data, status) {
-        console.log(data);
-        $.each(data, function(i, value) {
-            console.log(value);
-            var inventory = '<tr>';
-                inventory += '<td>'+value.title+'</td>'
-                inventory += '<td>'+value.quantity+'</td>'
-                inventory += '<td>'+value.price+'</td>'
-                inventory += '<td>'+value.categories+'</td>'
-                inventory += '</tr>'
-                $('tbody#insertProducts').append(inventory);
+        $(document).ready(function () {
+          // TODO: Create an ajax GET request for /data/inventory.json
+          // TODO: Take the data from inventory.json and append it to the products table
+          //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+          //             its contents and fields
+          //       HINT: You will want to target #insertProducts for your new HTML elements
+          var inventoryTable = $("#insertProducts");
+          $.ajax("/data/inventory.json", {
+            type: "GET",
+          })
+            .done(function (data, status) {
+              console.log(data);
+              $.each(data, function (i, value) {
+                console.log(value);
+                var inventory = "<tr>";
+                inventory += "<td>" + value.title + "</td>";
+                inventory += "<td>" + value.quantity + "</td>";
+                inventory += "<td>" + value.price + "</td>";
+                inventory += "<td>" + value.categories + "</td>";
+                inventory += "</tr>";
+                $("tbody#insertProducts").append(inventory);
+                $("#refresh").click(function () {
+                  location.reload();
+                });
+              });
+            })
+            .fail(function (error) {
+              console.log("Something went wrong");
+              console.log(error);
+            })
+            .always(function () {
+              console.log("This will alway run!");
+            });
         });
-    }).fail(function(error) {
-        console.log("Something went wrong");
-        console.log(error);
-    }).always(function() {
-        console.log('This will alway run!');
-    });
-    });
 
-    // refresh button
-})();
-</script>
-
-</body>
+        // refresh button
+      })();
+    </script>
+  </body>
 </html>
