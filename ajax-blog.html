@@ -19,7 +19,7 @@
   </head>
   <body>
     <h1 class="text-center text-white bg-dark p-4 mb-3">Blog</h1>
-    <div id="posts"></div>
+    <div id="posts" class="m-5"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -47,6 +47,22 @@
             type: 'GET',
           }).done(function (data, status) {
             console.log('ready');
+            $.each(data, function(i, value) {
+                console.log(value);
+                var blogInnerHtml = $('#posts');
+                var blogContent = '<ul class="list-unstyled">'
+                  blogContent += '<li class="media">'
+                    blogContent += '<div class="media-body">'
+                    blogContent += '<h2 class="mt-0 mb-1">'+value.title+'</h2>'
+                    blogContent += '<h6 class="font-italic">'+value.date+'</h6>'
+                    blogContent += '<p>'+value.content+'</p>'
+                    blogContent += '<p class="font-weight-lighter">'+" Favorite Categories: "+value.categories+'</p>'
+                    blogContent += '</div>'
+                    blogContent += '</li>'
+                    blogContent += '</ul>'
+
+                    $(blogInnerHtml).append(blogContent);
+            });
           }).fail(function(error) {
             console.error(error);
           }).always(function() {
