@@ -32,17 +32,34 @@
       </h1>
     </header>
 
-    <form class="form-inline">
-        <div class="form-group mb-2">
-          <label for="search" class="sr-only">Search</label>
-          <input type="text" readonly class="form-control-plaintext" id="search" value="Place">
+    <form class="m-2 d-flex flex-row">
+      <div class="form-group d-flex flex-row mx-auto">
+        <div class="m-1">
+          <label for="search"></label>
         </div>
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="search2" class="sr-only">Search</label>
-          <input type="text" class="form-control" id="search2" placeholder="Search">
+        <div class="m-1">
+          <input
+            style="width: 400px;"
+            type="text"
+            class="form-control"
+            id="search"
+            placeholder="Search Place"
+          />
         </div>
-        <button type="submit" class="btn btn-warning mb-2">Search</button>
-      </form>
+        <div class="m-1">
+          <small id="emailHelp" class="form-text text-muted"
+            >Ex: Dallas,TX</small
+          >
+        </div>
+
+        <div class="ml-4">
+          <button id="search-btn" type="submit" class="btn btn-warning">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- div for weather cards -->
     <div id="container" class="d-flex flex-row m-2"></div>
     <!-- end of the main container -->
 
