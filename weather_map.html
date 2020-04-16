@@ -37,12 +37,12 @@
 
     <!-- mapbox html container -->
     <div class="container mt-3">
-        <div id="map"></div>
+      <div id="map"></div>
     </div>
-    
 
     <!-- mapbox JS -->
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
 
     <!-- bootstrap scripts -->
     <script
@@ -66,24 +66,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       (function () {
-        
         // mapbox
         mapboxgl.accessToken = mapboxToken;
-        var map = new mapboxgl.Map({
-          container: "map",
-          style: "mapbox://styles/mapbox/dark-v10",
-          zoom: 10,
-          center: [-98.4916, 29.4252],
-        });
 
-        var markerOptions = {
-            color: 'black',
-            draggable: true,
-        };
+        geocode("701 Commerce St. Dallas, TX, 75202", mapboxToken).then(
+          function (result) {
+            console.log(result);
+            var map = new mapboxgl.Map({
+              container: "map",
+              style: "mapbox://styles/mapbox/streets-v9",
+              zoom: 10,
+            });
+            map.flyTo({ center: result });
 
-        var marker = new mapboxgl.Marker(markerOptions)
-            .setLngLat([-98.4916, 29.4252])
-            .addTo(map);
+            var markerOptions = {
+              color: "black",
+              draggable: true,
+            };
+            var marker = new mapboxgl.Marker(markerOptions)
+              .setLngLat(result)
+              .addTo(map);
+          }
+        );
 
         $(document).ready(function () {
           console.log("Looking good in the jQuery DOM!");
