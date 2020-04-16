@@ -32,6 +32,17 @@
       </h1>
     </header>
 
+    <form class="form-inline">
+        <div class="form-group mb-2">
+          <label for="search" class="sr-only">Search</label>
+          <input type="text" readonly class="form-control-plaintext" id="search" value="Place">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="search2" class="sr-only">Search</label>
+          <input type="text" class="form-control" id="search2" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-warning mb-2">Search</button>
+      </form>
     <div id="container" class="d-flex flex-row m-2"></div>
     <!-- end of the main container -->
 
@@ -91,26 +102,6 @@
           );
         }
         marker.on("dragend", onDragEnd);
-
-        // geocode("701 Commerce St. Dallas, TX, 75202", mapboxToken).then(
-        //   function (result) {
-        //     console.log(result);
-        //     var map = new mapboxgl.Map({
-        //       container: "map",
-        //       style: "mapbox://styles/mapbox/streets-v9",
-        //       zoom: 10,
-        //     });
-        //     map.flyTo({ center: result });
-
-        //     var markerOptions = {
-        //       color: "black",
-        //       draggable: true,
-        //     };
-        //     var marker = new mapboxgl.Marker(markerOptions)
-        //       .setLngLat(result)
-        //       .addTo(map);
-        //   }
-        // );
 
         $(document).ready(function () {
           console.log("Looking good in the jQuery DOM!");
