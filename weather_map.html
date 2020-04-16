@@ -10,12 +10,21 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/weather.css">
-    <script src="https://kit.fontawesome.com/6a3a6a39bd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/weather.css" />
+    <script
+      src="https://kit.fontawesome.com/6a3a6a39bd.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="bg-dark">
-    <header id="main-header" class="d-flex justify-content-between p-3 bg-dark border-bottom border-warning">
-      <h1 class="text-white">Weather <span class="text-warning">App <i class="fas fa-poo-storm"></i></span></h1>
+    <header
+      id="main-header"
+      class="d-flex justify-content-between bg-dark border-bottom border-warning p-3 mb-5"
+    >
+      <h1 class="text-white">
+        Weather
+        <span class="text-warning">App <i class="fas fa-poo-storm"></i></span>
+      </h1>
     </header>
 
     <div id="container" class="d-flex flex-row m-2"></div>
@@ -57,11 +66,23 @@
             // 5day forecast
             for (var i = 0; i < 40; i++) {
               if (i % 8 === 0) {
+                var weatherIcon =
+                  "http://openweathermap.org/img/w/" +
+                  weather.list[i].weather[0].icon +
+                  ".png";
+                console.log(weatherIcon);
                 weatherContent +=
                   '<div id="card" class="card d-flex flex-row m-2" style="width: 20rem;">';
-                weatherContent += '<div class="card-body d-flex flex-column justify-content-around">';
                 weatherContent +=
-                  '<h5 class="card-title">' + weather.list[i].dt_txt + "</h5>";
+                  '<div class="card-body d-flex flex-column justify-content-around text-white">';
+                weatherContent +=
+                  '<h5 class="card-title text-warning">' +
+                  weather.list[i].dt_txt +
+                  "</h5>";
+                weatherContent +=
+                  '<img id="weather-icon" src="' +
+                  weatherIcon +
+                  '" class="mx-auto" height="50" width="50">';
                 weatherContent +=
                   '<p class="card-text">' +
                   '<span class="font-weight-bold">High</span>: ' +
