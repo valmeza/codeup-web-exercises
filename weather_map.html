@@ -10,10 +10,12 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/weather.css">
+    <script src="https://kit.fontawesome.com/6a3a6a39bd.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <header id="main-header" class="d-flex justify-content-between p-3 bg-dark">
-      <h1 class="text-white">Weather <span class="text-warning">App</span></h1>
+  <body class="bg-dark">
+    <header id="main-header" class="d-flex justify-content-between p-3 bg-dark border-bottom border-warning">
+      <h1 class="text-white">Weather <span class="text-warning">App <i class="fas fa-poo-storm"></i></span></h1>
     </header>
 
     <div id="container" class="d-flex flex-row m-2"></div>
@@ -74,7 +76,7 @@
                   "</p>";
                 weatherContent +=
                   "<p class='card-text'>" +
-                  "Wind Speed: " +
+                  "<span class='font-weight-bold'>Wind Speed</span>: " +
                   weather.list[i].wind.speed +
                   "</p>";
                 weatherContent += "</div>";
