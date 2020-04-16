@@ -38,6 +38,7 @@
     <!-- mapbox html container -->
     <div class="container mt-3">
       <div id="map"></div>
+      <pre id="coordinates" class="coordinates"></pre>
     </div>
 
     <!-- mapbox JS -->
@@ -69,25 +70,27 @@
         // mapbox
         mapboxgl.accessToken = mapboxToken;
 
-        geocode("701 Commerce St. Dallas, TX, 75202", mapboxToken).then(
-          function (result) {
-            console.log(result);
-            var map = new mapboxgl.Map({
-              container: "map",
-              style: "mapbox://styles/mapbox/streets-v9",
-              zoom: 10,
-            });
-            map.flyTo({ center: result });
+        var coordinates = $('#coordinates')
 
-            var markerOptions = {
-              color: "black",
-              draggable: true,
-            };
-            var marker = new mapboxgl.Marker(markerOptions)
-              .setLngLat(result)
-              .addTo(map);
-          }
-        );
+        // geocode("701 Commerce St. Dallas, TX, 75202", mapboxToken).then(
+        //   function (result) {
+        //     console.log(result);
+        //     var map = new mapboxgl.Map({
+        //       container: "map",
+        //       style: "mapbox://styles/mapbox/streets-v9",
+        //       zoom: 10,
+        //     });
+        //     map.flyTo({ center: result });
+
+        //     var markerOptions = {
+        //       color: "black",
+        //       draggable: true,
+        //     };
+        //     var marker = new mapboxgl.Marker(markerOptions)
+        //       .setLngLat(result)
+        //       .addTo(map);
+        //   }
+        // );
 
         $(document).ready(function () {
           console.log("Looking good in the jQuery DOM!");
