@@ -166,12 +166,14 @@
             // geocoder
             mapboxgl.accessToken = mapboxToken;
 
-
-            $('#search-btn').click(function () {
-                getInfo(userInput);
+            var search = $("#search").val();
+            $('#search-btn').click(function (e) {
+                e.preventDefault();
+                getInfo(search);
+                console.log(search);
             });
-            var userInput = $("#search").val();
-            geocode(userInput, mapboxToken).then(function (result) {
+
+            geocode(search, mapboxToken).then(function (result) {
                 var lon = result[0];
                 var lat = result[1];
                 console.log(lon, lat);
