@@ -164,17 +164,13 @@
           $(document).keypress(function (e) {
             result += e.key;
             result.push;
-            function updateLocation(e) {
-              e.preventDefault(); // this does not submit the form but updates the data
-              $("#search-btn").click(function () {
-                return result;
-              });
-            }
+            return result;
           });
 
           mapboxgl.accessToken = mapboxToken;
 
           geocode("Dallas", mapboxToken).then(function (result) {
+            $(result).empty(); // clean up structure
             var lon = result[0];
             var lat = result[1];
             console.log(lon, lat);
@@ -192,21 +188,28 @@
               .setLngLat(result)
               .addTo(map);
 
-            $.get("http://api.openweathermap.org/data/2.5/forecast?", {
-              APPID: OWM_KEY,
-              lat: lat,
-              lon: lon,
-              units: "imperial",
-            })
-              .done(function (data, status) {
-                console.log(data);
-                console.log(status);
-                weatherInformation(data);
+            function getInfo() {
+              $.get("http://api.openweathermap.org/data/2.5/forecast?", {
+                APPID: OWM_KEY,
+                lat: lat,
+                lon: lon,
+                units: "imperial",
               })
-              .error(function (error) {
-                console.log("Error:");
-                console.log(error);
-              });
+                .done(function (data, status) {
+                  console.log(data);
+                  console.log(status);
+                  weatherInformation(data);
+                })
+                .error(function (error) {
+                  console.log("Error:");
+                  console.log(error);
+                });
+            }
+            getInfo();
+
+            $('#search-btn').click(function() {
+                getInfo();
+            });
           });
         });
       })();
