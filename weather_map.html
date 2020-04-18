@@ -29,11 +29,11 @@
     <!-- start of the main container -->
     <header
       id="main-header"
-      class="d-flex justify-content-between bg-dark border-bottom border-warning p-3 mb-5"
+      class="d-flex justify-content-around bg-dark border-bottom border-warning p-3 mb-5"
     >
       <h1 class="text-white">
         Weather
-        <span>App <i class="fas fa-bolt"></i></span>
+        <span>App <i class="fas fa-sun"></i></span>
       </h1>
     </header>
 
@@ -133,7 +133,7 @@
                 weatherContent +=
                   '<div class="card-body d-flex flex-column justify-content-around text-white">';
                 weatherContent +=
-                  '<h5 class="card-title text-warning">' +
+                  '<h5 class="card-title text-warning text-center">' +
                   split[0] +
                   "</h5>";
                 weatherContent +=
@@ -184,12 +184,12 @@
               console.log(lon, lat);
               var map = new mapboxgl.Map({
                 container: "map",
-                style: "mapbox://styles/mapbox/streets-v9",
+                style: "mapbox://styles/mapbox/dark-v10",
                 zoom: 10,
               });
               map.setCenter(result);
               var markerOptions = {
-                color: "blue",
+                color: "black",
                 draggable: true,
               };
               var marker = new mapboxgl.Marker(markerOptions)
