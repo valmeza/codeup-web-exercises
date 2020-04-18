@@ -42,7 +42,7 @@
         <div class="m-1">
           <label for="search"></label>
         </div>
-        <div class="m-1">
+        <div class="m-2">
           <input
             style="width: 400px;"
             type="text"
@@ -52,13 +52,8 @@
             placeholder="Search Place"
           />
         </div>
-        <div class="m-1">
-          <small id="search-example" class="form-text text-muted"
-            >Ex: Dallas,TX</small
-          >
-        </div>
-
-        <div class="ml-4">
+       
+        <div class="m-2">
           <button id="search-btn" class="btn btn-warning">
             Submit
           </button>
@@ -121,8 +116,8 @@
 
             for (var i = 0; i < 40; i++) {
               if (i % 8 === 0) {
-                  var date = weather.list[i].dt_txt;
-                  var split = date.split(" ");
+                var date = weather.list[i].dt_txt;
+                var split = date.split(" ");
                 var weatherIcon =
                   "http://openweathermap.org/img/w/" +
                   weather.list[i].weather[0].icon +
@@ -196,7 +191,7 @@
                 .setLngLat(result)
                 .addTo(map);
 
-                $.get("http://api.openweathermap.org/data/2.5/forecast?", {
+              $.get("http://api.openweathermap.org/data/2.5/forecast?", {
                 APPID: OWM_KEY,
                 lat: lat,
                 lon: lon,
@@ -212,9 +207,6 @@
                   console.log(error);
                 });
             });
-
-             
-            
           }
         });
       })();
