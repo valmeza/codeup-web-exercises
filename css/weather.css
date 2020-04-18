@@ -7,8 +7,26 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   background-color: transparent;
 }
-.fa-poo-storm {
+.fa-bolt {
+  color: red;
   position: absolute;
   right: 50%;
   top: 25px;
+}
+
+h1{
+  background: -webkit-linear-gradient(45deg,red, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.current-city {
+  background: -webkit-linear-gradient(45deg,lightblue, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-bolt {
+  font-size: 50px;
+  background: -webkit-linear-gradient(red, yellow,blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
