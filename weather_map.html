@@ -118,8 +118,11 @@
               "</h2>";
 
             // 5day forecast
+
             for (var i = 0; i < 40; i++) {
               if (i % 8 === 0) {
+                  var date = weather.list[i].dt_txt;
+                  var split = date.split(" ");
                 var weatherIcon =
                   "http://openweathermap.org/img/w/" +
                   weather.list[i].weather[0].icon +
@@ -131,7 +134,7 @@
                   '<div class="card-body d-flex flex-column justify-content-around text-white">';
                 weatherContent +=
                   '<h5 class="card-title text-warning">' +
-                  weather.list[i].dt_txt +
+                  split[0] +
                   "</h5>";
                 weatherContent +=
                   '<img id="weather-icon" src="' +
@@ -143,7 +146,7 @@
                   weather.list[i].main.temp_max +
                   " / " +
                   "<span class='font-weight-bold'>Low:</span> " +
-                  weather.list[0].main.temp_min +
+                  weather.list[i].main.temp_min +
                   "</p>";
                 weatherContent +=
                   '<p class="card-text text-capitalize">' +

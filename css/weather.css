@@ -14,19 +14,10 @@
   top: 25px;
 }
 
-h1{
-  background: -webkit-linear-gradient(45deg,red, yellow);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.current-city {
-  background: -webkit-linear-gradient(45deg,lightblue, blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+h1,
+.current-city,
 .fa-bolt {
-  font-size: 50px;
-  background: -webkit-linear-gradient(red, yellow,blue);
+  background: -webkit-linear-gradient(45deg, red, yellow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
