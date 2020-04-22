@@ -1,14 +1,4 @@
 "use strict";
-// const url = 'https://api.github.com/users/valmeza/events/public';
-// console.log(url);
-
-// fetch(url, {headers: {'Authorization': `token ${PROMISE_KEY}`}}).then(response => {
-//     response.json().then(user => {
-//         user.forEach(userObj => {
-//             console.log(userObj)
-//         });
-//     });
-// });
 
 // function status(response) {
 //     if (response.status >= 200 && response.status < 300) {
@@ -51,3 +41,13 @@ function getLastCommit(username) {
         )
 }
 getLastCommit('valmeza').then(lastCommit => document.body.innerHTML = `${lastCommit}`);
+
+const wait = miliseconds => {
+    return new Promise ( (resolved, reject) => {
+        setTimeout(() => {
+            resolved();
+        }, miliseconds);
+    });
+};
+wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
