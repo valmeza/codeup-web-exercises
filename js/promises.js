@@ -39,7 +39,15 @@ function getLastCommit(username) {
     console.log(url);
     return fetch(url, {headers: {'Authorization': `token ${PROMISE_KEY}`}})
         .then(response => response.json()
-            .then (data => data[0].created_at)
+            .then (listOfEvents => {
+                for (let event of listOfEvents) {
+                    console.log(event)
+                    if(event.type === 'PushEvent') {
+                        // console.log(event.created_at);
+                        return event.created_at
+                    }
+                }
+            })
         )
 }
 getLastCommit('valmeza').then(lastCommit => document.body.innerHTML = `${lastCommit}`);
