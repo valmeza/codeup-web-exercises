@@ -77,6 +77,6 @@ let list = '<ul>';
 for(let developer of developers  ) {
 
   // TODO: rewrite the assignment below to use template strings
-  list `<li>${developer}</li>`;
+  list += `<li>${developer}</li>`;
 };
 list += '</ul>';
