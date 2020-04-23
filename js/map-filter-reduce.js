@@ -51,3 +51,7 @@ console.log(userEmail);
 
 const averageYears = users.reduce((acc, value) => acc + value.yearsOfExperience, 0) / users.length;
 console.log(averageYears);
+
+users.reduce((instructors, names) => {
+    console.log("Instructors name: " + names.name);
+}, 0);
