@@ -47,4 +47,25 @@ console.log(userEmail);
 const averageYears = users.reduce((acc, value) => acc + value.yearsOfExperience, 0) / users.length;
 console.log(averageYears);
 
+const longestEmail = users.reduce((longest, user) => {
+    if(user.email.length > longest.length) {
+        return user.email;
+    } else {
+        return longest;
+    }
+}, '');
+console.log(longestEmail);
+
+const everyone = users.reduce((names, user) => {
+    if(names !== '') {
+        names += ', '
+    }
+   return names + user.name;
+}, '');
+console.log(`Instructor names: ${everyone}`);
+
+// using join
+console.log("Same result using join: "+ users.map(user => user.name).join(', '));
+
+// bonus exercise
 
