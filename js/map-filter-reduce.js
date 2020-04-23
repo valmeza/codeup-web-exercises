@@ -43,3 +43,11 @@ console.log(userLanguage);
 
 const userEmail = users.map(mail => mail.email);
 console.log(userEmail);
+
+// const averageYears = users.reduce((acc, value) =>{
+//     acc + value
+//     console.log(value.yearsOfExperience);
+// },0);
+
+const averageYears = users.reduce((acc, value) => acc + value.yearsOfExperience, 0) / users.length;
+console.log(averageYears);
