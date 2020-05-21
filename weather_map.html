@@ -48,7 +48,6 @@
             type="text"
             class="form-control"
             id="search"
-            value="text"
             placeholder="Search Place"
           />
         </div>
@@ -163,7 +162,7 @@
           // geocoder
           mapboxgl.accessToken = mapboxToken;
 
-          var search = 'Oklahoma City, OK';
+          var search = "Oklahoma City, OK";
           $("#search-btn").click(function (e) {
             e.preventDefault();
             search = $("#search").val();
@@ -172,6 +171,7 @@
             updateWeather(search);
           });
           updateWeather();
+
           function updateWeather(lon, lat) {
             geocode(search, mapboxToken).then(function (result) {
               lon = result[0];
